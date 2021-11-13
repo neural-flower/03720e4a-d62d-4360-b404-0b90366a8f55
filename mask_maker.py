@@ -49,7 +49,7 @@ def parse_anno_file(cvat_xml, image_name):
         for key, value in image_tag.items():
             image[key] = value
         image['shapes'] = []
-        for poly_tag in image_tag.iter('polygon'):
+        for poly_tag in image_tag.iter('points'):
             polygon = {'type': 'polygon'}
             for key, value in poly_tag.items():
                 polygon[key] = value
